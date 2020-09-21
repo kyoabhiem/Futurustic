@@ -1,0 +1,7 @@
+IpAddress: 127.0.0.1
+HttpPort: 80
+HttpsPort: 443
+SslPrivateKey: ssl/key.pem
+SslCertificate: ssl/cert.pem
+Worker: 5
+RustLog: actix_web=debug,actix_server=info
