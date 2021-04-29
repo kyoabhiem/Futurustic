@@ -7,37 +7,59 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-actix-http = "2.0.0"
-actix-web = { version = "3.0.2", features = ["rustls"] }
-actix-cors =   "0.3.0"
-actix-files = "0.3.0"
+#actix
+actix-web = "3.3.2"
+actix-files = "0.5.0"
+actix-cors = "0.5.4"
+
+#config
+dotenv = "0.15.0"
+envy = "0.4"
+
+#actix-http = "2.2.0"
 #actix-session = "0.4.0"
-actix-utils = "2.0.0"
-rustls = "0.18.1"
-config = "0.10.1"
-glob = "0.3.0"
+#actix-utils = "2.0.0"
 
 #Template Engine
-askama = "0.10.3"
+askama = "0.10"
 
 #hasing
-#bcrypt = "0.8.2"
+bcrypt = "0.9.0"
 
 #date time
-#chrono = "0.4.15"f
+chrono = { version = "0.4.19", features = ["serde"] }
+
+#Validator
+validator = "0.13"
+validator_derive = "0.13"
 
 #Database ORM
-#diesel = "1.4.5"
+diesel = { version = "1.4", features = ["mysql", "postgres", "r2d2", "chrono", "uuidv07"] }
 
-#Other
-env_logger = "0.7.1"
-#jsonwebtoken = "7.2.0"
-#serde_json = "1.0.57"
-#rand = "0.7.3"
-derive_more = "0.99.10"
+r2d2 = "0.8.9"
+uuid = { version = "0.8.2", features = ['serde', 'v5'] }
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
 
 #handler
 #failure = "0.1.8"
 #futures = "0.3.5"
 #bytes = "0.5.6"
 #fail = "0.4.0"
+
+#Other
+env_logger = "0.8.3"
+#jsonwebtoken = "7.2.0"
+#serde_json = "1.0.57"
+#rand = "0.7.3"
+lazy_static = "1.4"
+derive_more = "0.99"
+
+
+sys-info = "0.9"
+rayon = "1.5"
+[features]
+mysql = []
+postgres = []
+default = ["mysql"]
